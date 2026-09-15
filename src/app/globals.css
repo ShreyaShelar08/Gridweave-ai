@@ -100,3 +100,25 @@ body {
   background: var(--color-border);
   border-radius: 999px;
 }
+
+/* ── Select / Option dark-theme fix ──────────────────────────────────────
+   Native <option> elements ignore inherited colour on most browsers.
+   Setting background + color here ensures dropdown values are readable
+   against the dark surface background.
+   ─────────────────────────────────────────────────────────────────────── */
+select {
+  color-scheme: dark;
+  background-color: var(--color-surface);
+  color: var(--color-text);
+}
+
+select option {
+  background-color: var(--color-surface-raised);
+  color: var(--color-text);
+}
+
+select option:checked,
+select option:hover {
+  background-color: var(--color-border);
+  color: var(--color-text);
+}
